@@ -16,11 +16,21 @@ Paper download in: https://arxiv.org/pdf/2308.07504.pdf
   <div style="color:orange; border-bottom: 10px solid #d9d9d9; display: inline-block; color: #999; padding: 10px;"> Fig 2. Illustration of the proposed DMFF module </div>
 </div>
 
-
 ### Installation
 Clone repo and install requirements.txt in a Python>=3.8.0 conda environment, including PyTorch>=1.12.
 ```
 git clone https://github.com/chanchanchan97/ICAFusion.git
 cd ICAFusion
 pip install -r requirements.txt
+```
+
+### Citation
+If you find our work useful in your research, please consider citing:
+```
+@article{shen2023icafusion,
+  title={ICAFusion: Iterative Cross-Attention Guided Feature Fusion for Multispectral Object Detection},
+  author={Shen, Jifeng and Chen, Yifei and Liu, Yue and Zuo, Xin and Fan, Heng and Yang, Wankou},
+  journal={arXiv preprint arXiv:2308.07504},
+  year={2023}
+}
 ```
