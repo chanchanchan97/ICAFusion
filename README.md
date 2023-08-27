@@ -12,4 +12,10 @@
 </div>
 
 
-### 2. 
+### Installation
+Clone repo and install requirements.txt in a Python>=3.8.0 conda environment, including PyTorch>=1.12.
+```
+git clone https://github.com/chanchanchan97/ICAFusion.git
+cd ICAFusion
+pip install -r requirements.txt
+```
