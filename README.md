@@ -27,10 +27,14 @@ pip install -r requirements.txt
 ### Citation
 If you find our work useful in your research, please consider citing:
 ```
-@article{shen2023icafusion,
+@article{SHEN2023109913,
   title={ICAFusion: Iterative Cross-Attention Guided Feature Fusion for Multispectral Object Detection},
   author={Shen, Jifeng and Chen, Yifei and Liu, Yue and Zuo, Xin and Fan, Heng and Yang, Wankou},
-  journal={arXiv preprint arXiv:2308.07504},
-  year={2023}
+  journal={Pattern Recognition},
+  pages={109913},
+  year={2023},
+  issn={0031-3203},
+  doi={https://doi.org/10.1016/j.patcog.2023.109913},
+  author={Jifeng Shen and Yifei Chen and Yue Liu and Xin Zuo and Heng Fan and Wankou Yang},
 }
 ```
