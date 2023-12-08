@@ -24,6 +24,19 @@ cd ICAFusion
 pip install -r requirements.txt
 ```
 
+### Datasets
+1. KAIST
+Link：https://pan.baidu.com/s/1UdwQJH-cHVL91pkMW-ij6g 
+Code：ig3y
+
+2. FLIR-aligned
+Link：https://pan.baidu.com/s/1ljr8qJYdz-60Lj-iVEHBvg 
+Code：uqzs
+
+3. VEDAI
+Link：https://pan.baidu.com/s/1c--8tD1s1HmV-6R2GKnACA 
+Code：kp59    
+
 ### Citation
 If you find our work useful in your research, please consider citing:
 ```
