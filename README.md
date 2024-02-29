@@ -41,6 +41,9 @@ Code：kp59
  - **KAIST**  
 Link：https://pan.baidu.com/s/18UXctOSgjp6EUcJXIGbWTQ
 Code：9eku
+ - **FLIR-aligned**
+Link：https://pan.baidu.com/s/1VZbsTE4o6bw2XBypPW3zoA
+Code：xli9
 
 ### Citation
 If you find our work useful in your research, please consider citing:
