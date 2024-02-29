@@ -35,7 +35,12 @@ Code：uqzs
 
  - **VEDAI**  
 Link：https://pan.baidu.com/s/1c--8tD1s1HmV-6R2GKnACA 
-Code：kp59    
+Code：kp59
+
+### Weights
+ - **KAIST**
+Link：https://pan.baidu.com/s/18UXctOSgjp6EUcJXIGbWTQ
+Code：9eku
 
 ### Citation
 If you find our work useful in your research, please consider citing:
