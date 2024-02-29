@@ -82,8 +82,6 @@ class Model(nn.Module):
             self.yaml_file = Path(cfg).name
             with open(cfg) as f:
                 self.yaml = yaml.safe_load(f)  # model dict
-            # print("YAML")
-            # print(self.yaml)
 
         # Define model
         ch = self.yaml['ch'] = self.yaml.get('ch', ch)  # input channels
@@ -94,9 +92,7 @@ class Model(nn.Module):
             logger.info(f'Overriding model.yaml anchors with anchors={anchors}')
             self.yaml['anchors'] = round(anchors)  # override yaml value
         self.model, self.save = parse_model(deepcopy(self.yaml), ch=[ch])  # model, savelist
-        # print(self.model)
         self.names = [str(i) for i in range(self.yaml['nc'])]  # default names
-        # logger.info([x.shape for x in self.forward(torch.zeros(1, ch, 64, 64))])
 
         # Build strides, anchors
         m = self.model[-1]  # Detect()
@@ -104,15 +100,12 @@ class Model(nn.Module):
 
         if isinstance(m, Detect):
             s = 256  # 2x min stride
-            # print("1, ch, s, s", 1, ch, s, s)
             # m.stride = torch.tensor([s / x.shape[-2] for x in self.forward(torch.zeros(1, ch, s, s), torch.zeros(1, ch, s, s))])  # forward
             m.stride = torch.Tensor([8.0, 16.0, 32.0])
-            # print("m.stride", m.stride)
             m.anchors /= m.stride.view(-1, 1, 1)
             check_anchor_order(m)
             self.stride = m.stride
             #self._initialize_biases()  # only run once
-            # logger.info('Strides: %s' % m.stride.tolist())
 
         # Init weights, biases
         initialize_weights(self)
@@ -186,11 +179,6 @@ class Model(nn.Module):
             logger.info(
                 ('%6g Conv2d.bias:' + '%10.3g' * 6) % (mi.weight.shape[1], *b[:5].mean(1).tolist(), b[5:].mean()))
 
-    # def _print_weights(self):
-    #     for m in self.model.modules():
-    #         if type(m) is Bottleneck:
-    #             logger.info('%10.3g' % (m.w.detach().sigmoid() * 2))  # shortcut weights
-
     def fuse(self):  # fuse model Conv2d() + BatchNorm2d() layers
         logger.info('Fusing layers... ')
         for m in self.model.modules():
@@ -242,7 +230,7 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
 
         n = max(round(n * gd), 1) if n > 1 else n  # depth gain
         if m in [Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv, BottleneckCSP,
-                 C3, C3TR, MV2Block, MobileViTBlock]:
+                 C3, C3TR]:
 
             if m is Focus:
                 c1, c2 = 3, args[0]
@@ -281,9 +269,6 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
         elif m is Add2:
             c2 = ch[f[0]]
             args = [c2, args[1]]
-        elif m is GPT:
-            c2 = ch[f[0]]
-            args = [c2]
         elif m is Detect:
             args.append([ch[x] for x in f])
             if isinstance(args[1], int):  # number of anchors
@@ -292,14 +277,11 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
             c2 = ch[f] * args[0] ** 2
         elif m is Expand:
             c2 = ch[f] // args[0] ** 2
-        elif m in [NiNfusion, NiNfusion_SENet, NiNfusion_CBAM]:
+        elif m is NiNfusion:
             c1 = sum([ch[x] for x in f])
             c2 = c1 // 2
             args = [c1, c2, *args]
-        elif m is T2T_module:
-            c2 = ch[f[0]]
-            args = [c2, *args[0:]]
-        elif m in [TransformerFusionBlock, RegistrationBlock, STNFusionBlock]:
+        elif m is TransformerFusionBlock:
             c2 = ch[f[0]]
             args = [c2, *args[1:]]
         else:
@@ -314,10 +296,9 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
         layers.append(m_)
         if i == 0:
             ch = []
-        # if i == 4:
-        #     ch = []
+
         ch.append(c2)
-    # print(layers)
+        
     return nn.Sequential(*layers), sorted(save)
 
 
@@ -337,35 +318,4 @@ if __name__ == '__main__':
     input_ir = torch.Tensor(8, 3, 640, 640).to(device)
 
     output = model(input_rgb, input_ir)
-    print("YOLO")
-    print(output[0].shape)
-    print(output[1].shape)
-    print(output[2].shape)
-    # print(output)
-
-    # # Create model
-    # model =TwoStreamModel(opt.cfg).to(device)
-    # print(model)
-    # input_rgb = torch.Tensor(8, 3, 640, 640).to(device)
-    # input_ir = torch.Tensor(8, 3, 640, 640).to(device)
-    # output = model.model(input_rgb, input_ir)
-    # print("YOLO Fusion")
-    # print(output[0].shape)
-    # print(output[1].shape)
-    # print(output[2].shape)
-    # print(output.shape)
-
-    # print(model)
-    # model.train()
-    # torch.save(model, "yolov5s.pth")
-
-    # Profile
-    # img = torch.rand(8 if torch.cuda.is_available() else 1, 3, 320, 320).to(device)
-    # y = model(img, profile=True)
-
-    # Tensorboard (not working https://github.com/ultralytics/yolov5/issues/2898)
-    # from torch.utils.tensorboard import SummaryWriter
-    # tb_writer = SummaryWriter('.')
-    # logger.info("Run 'tensorboard --logdir=models' to view tensorboard at http://localhost:6006/")
-    # tb_writer.add_graph(torch.jit.trace(model, img, strict=False), [])  # add model graph
-    # tb_writer.add_image('test', img[0], dataformats='CWH')  # add model to tensorboard
+    
