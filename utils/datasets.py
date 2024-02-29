@@ -1012,9 +1012,6 @@ class LoadMultiModalImagesAndLabels(Dataset):  # for training/testing
         # img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         # img = np.ascontiguousarray(img)
 
-        img_rgb = cv2.resize(img_rgb, (self.img_size, self.img_size))
-        img_ir = cv2.resize(img_ir, (self.img_size, self.img_size))
-
         img_rgb = img_rgb[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         img_rgb = np.ascontiguousarray(img_rgb)
         img_ir = img_ir[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
