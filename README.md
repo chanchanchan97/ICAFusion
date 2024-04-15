@@ -46,11 +46,11 @@ Link：https://pan.baidu.com/s/1VZbsTE4o6bw2XBypPW3zoA
 Code：xli9
 
 # Files
+**Note**: This is the txt files for evaluation. We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
+
  - **KAIST**
 Link：https://pan.baidu.com/s/1N7SNEPXKX7KFaO2Th7vq2g 
-Code：zijw
-
-**Note**: We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
+Code：zijw  
 
 ### Citation
 If you find our work useful in your research, please consider citing:
