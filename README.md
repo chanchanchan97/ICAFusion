@@ -50,7 +50,7 @@ Code：xli9
 Link：https://pan.baidu.com/s/1N7SNEPXKX7KFaO2Th7vq2g 
 Code：zijw
 
-**Note:**We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
+**Note**: We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
 
 ### Citation
 If you find our work useful in your research, please consider citing:
