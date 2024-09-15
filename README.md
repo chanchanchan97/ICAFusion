@@ -34,8 +34,8 @@ Link：https://pan.baidu.com/s/1ljr8qJYdz-60Lj-iVEHBvg
 Code：uqzs
 
  - **VEDAI**  
-fold01: Link：https://pan.baidu.com/s/1FoU-GL1IYuMPvc4hzpW-gw
-Code：5hfb
+Link：https://pan.baidu.com/s/1UKSI0Go0Ddt62tXNIySz9w
+Code：5ett
 
 
 ### Weights
