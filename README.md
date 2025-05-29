@@ -58,7 +58,6 @@ Code reference for codetr: https://github.com/cpboost/double-co-detr.git
 |----------------------|----------|----------|----------|----------|
 | ~~yolov5_ICAFusion~~ | ~~81.6~~ | ~~89.0~~ | ~~66.9~~ | ~~79.2~~ |
 | yolov5_ICAFusion     | 84.9     | 89.8     | 73.8     | 82.8     |
-| Codetr_ICAFusion     | 90.4     | 93.4     | 76.5     | 86.8     |
 
 
 ### Files
