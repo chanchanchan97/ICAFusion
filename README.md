@@ -44,21 +44,31 @@ Link：https://pan.baidu.com/s/18UXctOSgjp6EUcJXIGbWTQ
 Code：9eku
 
  - **FLIR-aligned**  
-We fixed some bugs and now update the results on the FLIR dataset with the model weights as follows:
- - **FLIR-aligned**  
+We fixed some bugs and now update the results on the FLIR dataset with the model weights as follows:  
 ~~Link：https://pan.baidu.com/s/1VZbsTE4o6bw2XBypPW3zoA
 Code：xli9~~   
-Link: https://pan.baidu.com/s/1fEFOEyzVIxNCMjJjuujJUQ?pwd=a81f 
+Link: https://pan.baidu.com/s/1fEFOEyzVIxNCMjJjuujJUQ?pwd=a81f   
 code: a81f
 
 ### Results update
-Code reference for codetr: https://github.com/cpboost/double-co-detr.git
+ - **FLIR**
 
 | Methods              | person   | car      | bicycle  | mAP@50   |
 |----------------------|----------|----------|----------|----------|
 | ~~yolov5_ICAFusion~~ | ~~81.6~~ | ~~89.0~~ | ~~66.9~~ | ~~79.2~~ |
 | yolov5_ICAFusion     | 84.9     | 89.8     | 73.8     | 82.8     |
 
+ - **M3FD**
+
+| People | Car  | Bus  | Motorcycle | Lamp | Truck | mAP@50 |
+|--------|------|------|------------|------|-------|--------|
+| 82.3   | 93.4 | 93.9 | 89.6       | 82.2 | 87.8  | 88.2   |
+
+- **DroneVehicle**
+
+| Car  | Truck | Bus  | Van  | freight_car | mAP@50 |
+|------|-------|------|------|-------------|--------|
+| 98.0 | 84.2  | 97.1 | 71.0 | 73.8        | 84.8   |
 
 ### Files
 **Note**: This is the txt files for evaluation. We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
