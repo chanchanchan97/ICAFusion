@@ -76,6 +76,9 @@ code: a81f
  - **KAIST**
 Link：https://pan.baidu.com/s/1N7SNEPXKX7KFaO2Th7vq2g 
 Code：zijw  
+### Our new works     
+- Multispectral State-Space Feature Fusion: Bridging Shared and Cross-Parametric Interactions for Object Detection **[[paper]](https://arxiv.org/abs/2507.14643)**  **[[code]](https://github.com/61s61min/MS2Fusion)**    
+- IRDFusion: Iterative Relation-Map Difference guided Feature Fusion for Multispectral Object Detection **[[paper]](https://arxiv.org/html/2509.09085v1)** **[[code]](https://github.com/61s61min/IRDFusion.git)**
 
 ### Citation
 If you find our work useful in your research, please consider citing:
