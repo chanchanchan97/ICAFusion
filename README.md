@@ -70,6 +70,18 @@ code: a81f
 |------|-------|------|------|-------------|--------|
 | 98.0 | 84.2  | 97.1 | 71.0 | 73.8        | 84.8   |
 
+- **DVTOP**
+
+| Car   | bicycle  | person | mAP@50 |
+|------|------|-------------|--------|
+| 92.6 |83.6|84.6 |86.9|
+
+- **SeaDroneSee**
+
+| Swimmer   | Floater  | Boat | mAP@50 |
+|------|------|-------------|--------|
+|14.7 |69.5|99.5 |61.2|
+
 ### Files
 **Note**: This is the txt files for evaluation. We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
 
