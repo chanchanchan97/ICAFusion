@@ -80,7 +80,26 @@ code: a81f
 
 | Swimmer   | Floater  | Boat | mAP@50 |
 |------|------|-------------|--------|
-|14.7 |69.5|99.5 |61.2|
+|14.7 |69.5|99.5 |61.2|      
+
+
+- **M4-SAR**
+
+| bridge | harbor | oil_tank | playground | airport | wind_turbine | mAP@50 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 74.4 | 93.5 | 62.8 | 91.5 | 89.9 | 97.9 | 85.0 |
+
+- **MFAD**
+
+| Car | Bus | Truck | Pedestrian | EbikeRider | Cyclist | mAP@50 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 88.9 | 88.0 | 86.0 | 77.3 | 73.9 | 53.4 | 77.9 |
+
+- **LLVIP**
+
+| mAP@50 | mAP@75 | mAP |
+| --- | --- | --- |
+| 98.4 | 76.2 | 64.5 |
 
 ### Files
 **Note**: This is the txt files for evaluation. We continuously optimize our codes, which results in the difference in detection performance. However, the codes of module for multimodal feature fusion still remain consistent with the methods proposed in this paper.
